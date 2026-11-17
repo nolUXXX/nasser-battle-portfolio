@@ -51,6 +51,29 @@
       html { scroll-padding-top: 9rem; }
       .wrap { width: min(100% - 2.5rem, 1120px); }
       .topbar .wrap { align-items: flex-start; flex-direction: column; gap: 0.6rem; padding-block: 0.85rem; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      html.paper-animate body::before { will-change: transform, opacity; animation: paper-uncrumple 800ms ease-out both; }
+    }
+    @keyframes paper-uncrumple {
+      from { transform: translateZ(0) scale(1.08) rotate(-0.4deg); opacity: 0.92; }
+      to { transform: translateZ(0) scale(1) rotate(0deg); opacity: 1; }
+    }
+  </style>
+  <script>
+    (function () {
+      if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: no-preference)').matches || !window.CSS || !CSS.supports('transform', 'translateZ(0)') || !CSS.supports('will-change', 'transform')) return;
+      var root = document.documentElement;
+      root.classList.add('paper-animate');
+      function finishPaper() { root.classList.remove('paper-animate'); }
+      window.addEventListener('animationend', function (event) {
+        if (event.animationName === 'paper-uncrumple' && event.pseudoElement === '::before') finishPaper();
+      });
+      window.setTimeout(finishPaper, 2000);
+    }());
+  </script>
+  <style>
+    @media (max-width: 720px) {
       nav { justify-content: flex-start; gap: 0.35rem 1rem; }
       main { padding-top: 3.5rem; }
       .intro, .main-grid, .lower-grid, .contact { grid-template-columns: 1fr; gap: 1.8rem; }
