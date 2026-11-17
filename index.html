@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Nasser Battle</title>
+  <style>
+    :root { color-scheme: light; --ink: #242927; --muted: #626b66; --line: #ccd2cc; --paper: #f8f8f4; --accent: #526a5c; }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 7rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.65; }
+    a { color: inherit; text-decoration-color: #aab4ac; text-underline-offset: 0.22em; }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(100% - 3rem, 1120px); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 72px; }
+    .brand { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
+    nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.5rem 1.35rem; }
+    nav a { font-size: 0.78rem; line-height: 1.4; font-weight: 600; text-decoration: none; color: #535c56; }
+    main { padding-top: 5.5rem; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(2rem, 3.6vw, 2.65rem); line-height: 1.12; letter-spacing: -0.045em; font-weight: 650; }
+    h2 { color: var(--accent); font-size: 0.7rem; line-height: 1.4; font-weight: 700; text-transform: uppercase; letter-spacing: 0.13em; }
+    h3 { font-size: 1.08rem; line-height: 1.4; font-weight: 650; letter-spacing: -0.015em; }
+    .intro { display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2fr); gap: 2rem; padding-bottom: 5.5rem; }
+    .intro-content { max-width: 43rem; }
+    .intro h2 { margin-bottom: 1rem; }
+    .intro p { font-size: 1.16rem; line-height: 1.65; max-width: 38rem; }
+    .main-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem; border-top: 1px solid var(--line); }
+    .section { padding-top: 1.4rem; }
+    .section h2 { margin-bottom: 2.35rem; }
+    .section p { max-width: 39rem; }
+    .subtle { color: var(--muted); font-size: 0.91rem; }
+    .school-description { margin-top: 1.4rem; }
+    .courses { margin-top: 2.6rem; }
+    .courses h3 { margin-bottom: 0.8rem; }
+    .courses ul { margin: 0; padding: 0; list-style: none; }
+    .courses li { padding: 0.46rem 0; border-top: 1px solid var(--line); font-size: 0.94rem; }
+    .courses li:last-child { border-bottom: 1px solid var(--line); }
+    .entry + .entry { border-top: 1px solid var(--line); margin-top: 2rem; padding-top: 1.6rem; }
+    .entry p:not(.subtle) { margin-top: 1rem; }
+    .lower-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem; margin-top: 5.5rem; border-top: 1px solid var(--line); }
+    .contact { margin-top: 5.5rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2fr); gap: 2rem; padding-top: 1.4rem; padding-bottom: 5.5rem; }
+    .contact p + p { margin-top: 0.35rem; }
+    footer { border-top: 1px solid var(--line); padding: 1.3rem 0 1.8rem; color: var(--muted); font-size: 0.78rem; }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 9rem; }
+      .wrap { width: min(100% - 2.5rem, 1120px); }
+      .topbar .wrap { align-items: flex-start; flex-direction: column; gap: 0.6rem; padding-block: 0.85rem; }
+      nav { justify-content: flex-start; gap: 0.35rem 1rem; }
+      main { padding-top: 3.5rem; }
+      .intro, .main-grid, .lower-grid, .contact { grid-template-columns: 1fr; gap: 1.8rem; }
+      .intro { padding-bottom: 3.5rem; }
+      .main-grid, .lower-grid { gap: 3.2rem; }
+      .main-grid .section + .section, .lower-grid .section + .section { border-top: 1px solid var(--line); }
+      .section h2 { margin-bottom: 1.5rem; }
+      .lower-grid, .contact { margin-top: 3.5rem; }
+      .contact { padding-bottom: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top">Nasser Battle</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a><a href="#school">School</a><a href="#work">Work Experience</a><a href="#sports">Sports</a><a href="#photography">Photography</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap" id="top">
+    <section class="intro" id="about">
+      <h1>Nasser Battle</h1>
+      <div class="intro-content"><h2>About</h2><p>I'm Nasser Battle. I'm 17 and was born on 08/03/2009. I go to the School of the Future in Philadelphia and study computer science in the CTE program.</p></div>
+    </section>
+    <div class="main-grid">
+      <section class="section" id="school">
+        <h2>School</h2>
+        <h3>School of the Future</h3>
+        <p class="subtle">Philadelphia, PA · Computer Science (CTE)</p>
+        <p class="school-description">CTE stands for Career and Technical Education. The program includes hands-on projects and practical technical skills alongside regular coursework.</p>
+        <div class="courses"><h3>Courses</h3><ul>
+          <li>Computer Science CTE (current)</li><li>AP Chemistry (current)</li><li>Honors Biology</li><li>Honors Geometry</li><li>Honors Algebra 2</li><li>Honors English 2</li>
+        </ul></div>
+      </section>
+      <section class="section" id="work">
+        <h2>Work Experience</h2>
+        <div class="entry"><h3>Boys &amp; Girls Club</h3><p class="subtle">Youth Program Assistant</p><p>I helped run after-school activities for kids.</p></div>
+        <div class="entry"><h3>Real Estate Program</h3><p class="subtle">Student participant, age 12</p><p>I learned the basics of real estate, property value, and community development.</p></div>
+      </section>
+    </div>
+    <div class="lower-grid">
+      <section class="section" id="sports"><h2>Sports</h2><p>I play basketball, volleyball, soccer, and football.</p></section>
+      <section class="section" id="photography"><h2>Photography</h2><p>I'm interested in photography.</p></section>
+    </div>
+    <section class="contact" id="contact"><h2>Contact</h2><div><p><a href="mailto:N.battle0803@gmail.com">N.battle0803@gmail.com</a></p><p><a href="tel:+12677846128">(267) 784-6128</a></p><p>Philadelphia, PA</p></div></section>
+  </main>
+  <footer><div class="wrap">Nasser Battle</div></footer>
+</body>
+</html>
